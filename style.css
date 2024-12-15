@@ -1,0 +1,305 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Font Smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cài đặt font chữ và nền */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to right, #a55468, #62c5dd); /* Gradient hồng và xanh trời */
+    color: #ffffff; /* Đổi màu chữ sang trắng để tăng độ tương phản với nền */
+    padding: 80px 20px; /* Giảm padding để dòng chúc mừng có thể cao lên */
+    text-align: center;
+    overflow: hidden; /* Ẩn thanh cuộn khi có hiệu ứng */
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 60px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 40px 10px;
+    }
+}
+
+/* Tiêu đề - Đã giảm kích thước và nâng cao vị trí */
+h1 {
+    font-size: 2.5em; /* Giảm từ 3em xuống 2.5em */
+    margin-bottom: 15px; /* Giảm margin-bottom để dòng chúc mừng cao lên */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Tăng độ sắc nét của bóng chữ để tương phản tốt hơn */
+    color: #ffffff; /* Đảm bảo màu chữ là trắng để tương phản với nền */
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Đoạn văn */
+p {
+    font-size: 1.4em; /* Giảm kích thước từ 1.5em xuống 1.4em */
+    margin-bottom: 30px; /* Giảm margin-bottom để cân đối hơn */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Tăng độ sắc nét của bóng chữ */
+    line-height: 1.6;
+    font-weight: 400;
+    color: #ffffff; /* Đảm bảo màu chữ là trắng để tương phản với nền */
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    p {
+        font-size: 1em;
+    }
+}
+
+/* Trái tim */
+.heart {
+    font-size: 4em; /* Giảm từ 5em xuống 4em */
+    color: #FF69B4; /* Màu hồng sáng */
+    cursor: pointer;
+    animation: heart-beat 1.5s infinite;
+    transition: transform 0.2s;
+}
+.heart:hover, .heart:focus {
+    transform: scale(1.2);
+}
+
+@keyframes heart-beat {
+    0%, 50%, 100% { transform: scale(1); }
+    25%, 75% { transform: scale(1.1); }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed; /* Giữ ở vị trí cố định */
+    z-index: 1000; /* Đảm bảo modal nằm trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: 100%; /* Chiếm toàn bộ chiều cao */
+    overflow: hidden; /* Ẩn thanh cuộn */
+    background-color: rgba(0,0,0,0.6); /* Nền mờ */
+    animation: fadeIn 0.5s;
+}
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Tăng độ trong suốt để tương phản tốt hơn */
+    color: #1f1217; /* Đảm bảo màu chữ đủ tương phản với nền */
+    margin: 5% auto; /* Giảm margin để modal cao lên */
+    padding: 40px;
+    border: 5px solid #4682B4;
+    width: 90%; /* Chiều rộng hợp lý */
+    max-width: 500px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.5s ease-out;
+    outline: none; /* Remove default outline */
+}
+.modal-content:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+.modal-content p {
+    font-size: 1.4em; /* Giảm từ 1.5em xuống 1.4em */
+    margin-bottom: 25px; /* Giảm margin-bottom */
+    color: #1f1217; /* Đảm bảo màu chữ đủ tương phản */
+}
+
+@media (max-width: 768px) {
+    .modal-content p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content p {
+        font-size: 1em;
+    }
+}
+
+/* Các nút trong modal */
+.modal-buttons button {
+    padding: 12px 25px; /* Giảm padding từ 15px 30px xuống 12px 25px */
+    margin: 0 10px; /* Giảm margin từ 0 15px xuống 0 10px */
+    font-size: 0.9em; /* Giảm font-size */
+    cursor: pointer;
+    border: none;
+    border-radius: 20px; /* Giảm border-radius từ 25px xuống 20px */
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn-yes {
+    background-color: #4682B4;
+    color: #fff;
+}
+.btn-yes:hover {
+    background-color: #5A9BD5;
+    transform: scale(1.05);
+}
+.btn-no {
+    background-color: #ccc;
+    color: #000;
+}
+.btn-no:hover {
+    background-color: #b3b3b3;
+    transform: scale(1.05);
+}
+.btn-close {
+    background-color: #4caf50;
+    color: #fff;
+}
+.btn-close:hover {
+    background-color: #43a047;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .modal-buttons button {
+        padding: 10px 20px;
+        margin: 8px 5px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-buttons button {
+        padding: 8px 16px;
+        margin: 6px 4px;
+        font-size: 0.7em;
+    }
+}
+
+/* Hiệu ứng thêm cho Modal Cảm Ơn */
+#thankYouModal .modal-content {
+    animation: fadeInScale 1s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Đồng hồ đếm thời gian */
+.clock {
+    font-size: 1.8em; /* Giảm từ 2em xuống 1.8em */
+    margin-top: 15px; /* Giảm margin-top từ 20px xuống 15px */
+    color: #4682B4; /* Màu xanh dương giống với văn bản trong modal */
+    font-weight: bold;
+    text-align: center;
+}
+.clock span {
+    display: inline-block;
+    min-width: 25px; /* Giảm min-width từ 30px xuống 25px */
+}
+
+@media (max-width: 768px) {
+    .clock {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .clock {
+        font-size: 1.2em;
+    }
+}
+
+/* Nền trái tim bay lên */
+.floating-hearts .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('https://i.imgur.com/Qp3bqQH.png') no-repeat center center, #FF69B4;
+    background-size: contain;
+    animation: floatUp 5s linear infinite;
+    opacity: 0.8; /* Tăng độ mờ lên để trái tim không bị lỗi */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-hearts .heart {
+        width: 15px;
+        height: 15px;
+        animation: floatUp 7s linear infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-hearts .heart {
+        width: 10px;
+        height: 10px;
+        animation: floatUp 9s linear infinite;
+    }
+}
+
+/* Nền ánh sáng nhấp nháy */
+.background-lights {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px); /* Tăng độ sáng của ánh sáng */
+    background-size: 50px 50px;
+    animation: lightMove 10s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes lightMove {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
